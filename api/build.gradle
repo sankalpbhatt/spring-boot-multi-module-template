@@ -1,0 +1,21 @@
+// api/build.gradle
+plugins {
+    id 'org.springframework.boot' apply false
+    id 'io.spring.dependency-management'
+    id 'java'
+    // 'io.spring.dependency-management' is applied from the parent build.gradle
+}
+
+dependencies {
+    // The version is resolved by the dependency-management plugin from the parent's BOM.
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-parameters")
+}

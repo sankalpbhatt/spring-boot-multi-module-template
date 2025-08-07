@@ -1,0 +1,6 @@
+rootProject.name = 'my-service'
+
+include 'implementation'
+include 'api'
+
+
